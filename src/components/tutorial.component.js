@@ -95,7 +95,7 @@ export default class Tutorial extends Component {
           .then(response => {
             console.log(response.data);
             this.setState({
-              message: "The tutorial was updated successfully!"
+              message: "O tutorial foi atualizado com sucesso!"
             });
           })
           .catch(e => {
@@ -107,7 +107,7 @@ export default class Tutorial extends Component {
         TutorialDataService.delete(this.state.currentTutorial.id)
           .then(response => {
             console.log(response.data);
-            this.props.history.push('/tutorials')
+            this.props.history.push('/tutoriais')
           })
           .catch(e => {
             console.log(e);
@@ -130,7 +130,7 @@ export default class Tutorial extends Component {
                       className="form-control"
                       id="titulo"
                       value={currentTutorial.titulo}
-                      onChange={this.onChangetitulo}
+                      onChange={this.onChangeTitulo}
                     />
                   </div>
                   <div className="form-group">

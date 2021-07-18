@@ -73,7 +73,13 @@ export default class TutoriaisLista extends Component {
       }
     
       buscarTitulo() {
-        TutorialDataService.findByTitle(this.state.buscarTitulo)
+        this.setState({
+          currentTutorial: null,
+          currentIndex: -1
+        });
+
+
+        TutorialDataService.findByTitulo(this.state.buscarTitulo)
           .then(response => {
             this.setState({
               tutoriais: response.data
@@ -102,7 +108,7 @@ export default class TutoriaisLista extends Component {
                 <div className="input-group-append">
                   <button
                     className="btn btn-outline-secondary"
-                    type="button"
+                    type="button" 
                     onClick={this.buscarTitulo}
                   >
                     Buscar
@@ -121,10 +127,10 @@ export default class TutoriaisLista extends Component {
                         "list-group-item " +
                         (index === currentIndex ? "active" : "")
                       }
-                      onClick={() => this.setActiveTutorial(tutorial, index)}
+                      onClick={() => this.definirTutorialAtivo(tutorial, index)}
                       key={index}
                     >
-                      {tutorial.title}
+                      {tutorial.titulo}
                     </li>
                   ))}
               </ul>

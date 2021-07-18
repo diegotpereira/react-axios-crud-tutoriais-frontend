@@ -27,7 +27,7 @@ class App extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"{/add"} className="nav-link">
+                  <Link to={"/add"} className="nav-link">
                     Novo
                   </Link>
                 </li>
@@ -37,7 +37,7 @@ class App extends Component {
             <div className="container mt-3">
               <Switch>
                 <Route exact path={["/", "/tutoriais"]} component={TutoriaisLista} />
-                <Route exact path="/add" component={AddTutorial  } />
+                <Route exact path="/add" component={AddTutorial} />
                 <Route path="/tutoriais/:id" component={Tutorial}/>
               </Switch>
             </div>
